@@ -1,47 +1,45 @@
 import React from 'react'
-import { ludoAction } from "../../store";
-import { useDispatch } from "react-redux";
-import { rollDice } from '../roll';
-
+import { ludoAction } from '../../store'
+import { useDispatch } from 'react-redux'
+import { rollDice } from '../roll'
 
 const rules = {
-    blue: { start: 1, end: 51 }, //1 and 51
-    red: { start: 40, end: 38 },
-    yellow: { start: 14, end: 12 },
-    green: { start: 27, end: 25 },
-  };
+  blue: { start: 1, end: 51 }, // 1 and 51
+  red: { start: 40, end: 38 },
+  yellow: { start: 14, end: 12 },
+  green: { start: 27, end: 25 }
+}
 
-  const wordForm = { 1: "one", 2: "two", 3: "three", 4: "four" };
+const wordForm = { 1: 'one', 2: 'two', 3: 'three', 4: 'four' }
 
-function Roll(props) {
+function Roll (props) {
+  const { turn, rollEnabled, position } = { ...props }
 
-    const {turn, rollEnabled, position} = {...props};
+  const dispatch = useDispatch()
 
-    const dispatch = useDispatch();
-    
   const rollHandler = () => {
-    const newDice = rollDice();
-    dispatch(ludoAction.rollDice(newDice));
-    dispatch(ludoAction.rollDisable());
-    dispatch(ludoAction.diceWhereLocation(turn));
-    const blocked = checkBlockHandler(newDice);
-    dispatch(ludoAction.playerChoices(blocked));
-  };
-
-  function checkBlockHandler(dice) {
-    //check same position
- 
-    const samePosArr = samePos(turn);
-    return blocked(samePosArr, turn, dice);
-
-    //check if block
+    const newDice = rollDice()
+    dispatch(ludoAction.rollDice(newDice))
+    dispatch(ludoAction.rollDisable())
+    dispatch(ludoAction.diceWhereLocation(turn))
+    const blocked = checkBlockHandler(newDice)
+    dispatch(ludoAction.playerChoices(blocked))
   }
-  function samePos(notColor) {
-    let color = ["red", "blue", "yellow", "green"].filter(
+
+  function checkBlockHandler (dice) {
+    // check same position
+
+    const samePosArr = samePos(turn)
+    return blocked(samePosArr, turn, dice)
+
+    // check if block
+  }
+  function samePos (notColor) {
+    const color = ['red', 'blue', 'yellow', 'green'].filter(
       (c) => c !== notColor
-    );
-    let result = [];
-    for (let index in color) {
+    )
+    const result = []
+    for (const index in color) {
       for (let i = 1; i < 4; i++) {
         for (let ii = i + 1; ii < 5; ii++) {
           if (
@@ -49,46 +47,45 @@ function Roll(props) {
             position[color[index]][wordForm[i]] ===
               position[color[index]][wordForm[ii]]
           ) {
-            result.push(position[color[index]][wordForm[i]]);
-            //todo: remove duplicate if any
+            result.push(position[color[index]][wordForm[i]])
+            // todo: remove duplicate if any
           }
         }
       }
     }
-    return [...new Set(result)];
+    return [...new Set(result)]
   }
 
-  function blocked(samePosArr, color, dice) {
-    let blocked = 0;
+  function blocked (samePosArr, color, dice) {
+    let blocked = 0
 
-    //loop thru all the peices to see if there are any blocks
+    // loop thru all the peices to see if there are any blocks
     for (let i = 1; i < 5; i++) {
-      dispatch(ludoAction.enablePiece({ color: color, pieceNum: wordForm[i] }));
+      dispatch(ludoAction.enablePiece({ color: color, pieceNum: wordForm[i] }))
 
-      let currentPos = position[color][wordForm[i]];
+      let currentPos = position[color][wordForm[i]]
 
-      //block from home
-      if (typeof currentPos !== "number") {
-        currentPos = currentPos.replace(/H/, "");
-        //can't go over home and update choice
-        const addDice = +currentPos + dice;
+      // block from home
+      if (typeof currentPos !== 'number') {
+        currentPos = currentPos.replace(/H/, '')
+        // can't go over home and update choice
+        const addDice = +currentPos + dice
         if (addDice > 6) {
           dispatch(
             ludoAction.disablePiece({ color: color, pieceNum: wordForm[i] })
-          );
-          blocked++;
+          )
+          blocked++
         }
-        continue;
+        continue
       }
 
-      const addDice = currentPos + dice;
+      const addDice = currentPos + dice
 
       for (let ii = 0; ii < samePosArr.length; ii++) {
-
         const disabledLogic =
-          currentPos < samePosArr[ii] && addDice >= samePosArr[ii];
+          currentPos < samePosArr[ii] && addDice >= samePosArr[ii]
 
-        if (currentPos === 0) continue;
+        if (currentPos === 0) continue
 
         if (
           addDice > samePosArr[ii] &&
@@ -96,33 +93,32 @@ function Roll(props) {
           samePosArr[ii] > rules[color].end &&
           rules[color].end + 5 > samePosArr[ii]
         ) {
-          //this won't work with blue
-          continue;
+          // this won't work with blue
+          continue
         }
 
         if (addDice > 52 && samePosArr[ii] <= addDice - 52) {
           dispatch(
             ludoAction.disablePiece({ color: color, pieceNum: wordForm[i] })
-          );
-          blocked++;
+          )
+          blocked++
         }
 
         if (disabledLogic) {
           dispatch(
             ludoAction.disablePiece({ color: color, pieceNum: wordForm[i] })
-          );
-          blocked++;
+          )
+          blocked++
         }
       }
     }
-    return blocked;
+    return blocked
   }
-
 
   return (
     <div
     className={
-      "roll " + turn + "Roll" + (rollEnabled ? " rollEnabled" : "")
+      'roll ' + turn + 'Roll' + (rollEnabled ? ' rollEnabled' : '')
     }
     onClick={rollHandler}
   >

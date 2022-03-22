@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { ludoAction } from "../../store";
-import styles from "./StartBoard.module.css";
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { ludoAction } from '../../store'
+import styles from './StartBoard.module.css'
 
-let players = [];
+let players = []
 
-function StartBoard() {
-  const [trans, setTrans] = useState({ green: false });
-  const dispatch = useDispatch();
+function StartBoard () {
+  const [trans, setTrans] = useState({ green: false })
+  const dispatch = useDispatch()
 
   const transparent = (color) => {
     setTrans((p) => {
-      const t = { ...p };
-      t[color] = !t[color];
+      const t = { ...p }
+      t[color] = !t[color]
       // return {green:true}
-      if(t[color]){
+      if (t[color]) {
         players.push(color)
-      }else{
-        players = players.filter((i)=>i !== color)
+      } else {
+        players = players.filter((i) => i !== color)
       }
-      return t;
-    });
-  };
+      return t
+    })
+  }
 
-  function startGame(){
+  function startGame () {
     dispatch(ludoAction.setPlayers(players))
   }
 
@@ -31,40 +31,40 @@ function StartBoard() {
     <div>
       <div
         className={
-          styles.green + (!trans["green"] ? "" : " " + styles.transparent)
+          styles.green + (!trans.green ? '' : ' ' + styles.transparent)
         }
-        onClick={() => transparent("green")}
+        onClick={() => transparent('green')}
       >
-        
+
       </div>
       <div
-        className={styles.red + (!trans["red"] ? "" : " " + styles.transparent)}
-        onClick={() => transparent("red")}
+        className={styles.red + (!trans.red ? '' : ' ' + styles.transparent)}
+        onClick={() => transparent('red')}
       >
-        
-      </div>
-      <div
-        className={
-          styles.yellow + (!trans["yellow"] ? "" : " " + styles.transparent)
-        }
-        onClick={() => transparent("yellow")}
-      >
-        
+
       </div>
       <div
         className={
-          styles.blue + (!trans["blue"] ? "" : " " + styles.transparent)
+          styles.yellow + (!trans.yellow ? '' : ' ' + styles.transparent)
         }
-        onClick={() => transparent("blue")}
+        onClick={() => transparent('yellow')}
       >
-        
+
+      </div>
+      <div
+        className={
+          styles.blue + (!trans.blue ? '' : ' ' + styles.transparent)
+        }
+        onClick={() => transparent('blue')}
+      >
+
       </div>
       <div className={styles.start}>
         <div className={styles.heading}><p>Choose&emsp;&emsp;</p> <p>&emsp;&emsp;Players</p></div>
-        <button className={styles.button + (!(players.length>1) ? " "+ styles.hidden : "")} onClick={startGame}>Start</button>
+        <button className={styles.button + (!(players.length > 1) ? ' ' + styles.hidden : '')} onClick={startGame}>Start</button>
       </div>
     </div>
-  );
+  )
 }
 
-export default StartBoard;
+export default StartBoard

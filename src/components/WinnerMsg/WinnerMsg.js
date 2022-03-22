@@ -1,10 +1,9 @@
-import React from "react";
-import styles from "./WinnerMsg.module.css";
-import trophy from "../../img/trophy-resize.png";
+import React from 'react'
+import styles from './WinnerMsg.module.css'
+import trophy from '../../img/trophy-resize.png'
 
-function WinnerMsg(props) {
-
-    const color = props.color;
+function WinnerMsg (props) {
+  const color = props.color
   return (
     <div className={styles.WinnerMsg}>
       <div className={styles.overlay}></div>
@@ -13,7 +12,7 @@ function WinnerMsg(props) {
         <img className={styles.trophyImg} src={trophy} alt=""/>
       </div>
     </div>
-  );
+  )
 }
 
-export default WinnerMsg;
+export default WinnerMsg
