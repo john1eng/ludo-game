@@ -1,0 +1,142 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.ludo_board{
+  height: 600px;
+  width: 600px;
+  position:relative;
+  background-image: url(./img/Ludo-board.png);
+  /* background-color: red; */
+  /* background-image: url('..\img\ludo-game-vector-illustration-design-interesting-board-everyone-high-quality-format-168221693.jpg'); */
+  background-size: cover;
+}
+
+
+
+
+/* .redStart_1{
+  position: absolute;
+  top:64px;
+  left:463px;
+}
+
+.redStart_2{
+  position: absolute;
+  top:105px;
+  left:424px;
+}
+
+.redStart_3{
+  position: absolute;
+  top:105px;
+  left:504px;
+}
+
+.redStart_4{
+  position: absolute;
+  top:145px;
+  left:463px;
+} */
+
+.board{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.red {
+  background-color: red;
+  border:2px solid darkred;
+}
+.blue {
+  background-color: blue;
+  border:2px solid darkblue;
+}
+.green {
+  background-color: green;
+  border:2px solid darkgreen;
+}
+.yellow{
+  background-color: yellow;
+  border:2px solid rgb(100, 98, 0);
+}
+
+.blueRoll{
+  position: absolute;
+  top:538px;
+  left: 538px;
+  visibility: hidden;
+}
+
+.redRoll{
+  position: absolute;
+  top:13px;
+  left: 540px;
+  visibility: hidden;
+}
+.yellowRoll{
+  position: absolute;
+  top:530px;
+  left:5px;
+  visibility: hidden;
+}
+
+.greenRoll{
+  position: absolute;
+  top:13px;
+  left:5px;
+  visibility: hidden;
+}
+
+.rollEnabled{
+  background-color: beige;
+  visibility: visible;
+  cursor: pointer;
+}
+
+.rollEnabled:hover{
+  filter: brightness(95%);
+}
+
+.roll{
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+  padding:4px;
+  border: 2px solid black;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature{
+  width:500px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.pieceForm{
+  border-radius: 50%;
+  width:32px;
+  height:32px;
+  cursor: pointer;
+}
+
+.reduce{
+  width:17px;
+  height:17px;
+}
+
+.disabled{
+  cursor: none;
+  opacity: 50%;
+  pointer-events: none;
+}

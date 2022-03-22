@@ -1,0 +1,118 @@
+.blueStart_one {
+  position: absolute;
+  top: 424px;
+  left: 463px;
+}
+
+.blueStart_two {
+  position: absolute;
+  top: 464px;
+  left: 424px;
+}
+
+.blueStart_three {
+  position: absolute;
+  top: 464px;
+  left: 504px;
+}
+
+.blueStart_four {
+  position: absolute;
+  top: 504px;
+  left: 463px;
+}
+
+.redStart_one {
+  position: absolute;
+  top: 64px;
+  left: 463px;
+}
+
+.redStart_two {
+  position: absolute;
+  top: 105px;
+  left: 424px;
+}
+
+.redStart_three {
+  position: absolute;
+  top: 105px;
+  left: 504px;
+}
+
+.redStart_four {
+  position: absolute;
+  top: 145px;
+  left: 463px;
+}
+
+.greenStart_one {
+  position: absolute;
+  top: 64px;
+  left: 105px;
+}
+
+.greenStart_two {
+  position: absolute;
+  top: 105px;
+  left: 65px;
+}
+
+.greenStart_three {
+  position: absolute;
+  top: 105px;
+  left: 145px;
+}
+
+.greenStart_four {
+  position: absolute;
+  top: 145px;
+  left: 105px;
+}
+.yellowStart_one {
+  position: absolute;
+  top: 422px;
+  left: 105px;
+}
+
+.yellowStart_two {
+  position: absolute;
+  top: 463px;
+  left: 65px;
+}
+
+.yellowStart_three {
+  position: absolute;
+  top: 463px;
+  left: 145px;
+}
+
+.yellowStart_four {
+  position: absolute;
+  top: 503px;
+  left: 105px;
+}
+
+.red {
+  background-color: red;
+  border:2px solid darkred;
+}
+.blue {
+  background-color: blue;
+  border:2px solid darkblue;
+}
+.green {
+  background-color: green;
+  border:2px solid darkgreen;
+}
+.yellow{
+  background-color: yellow;
+  border:2px solid rgb(100, 98, 0);
+}
+
+.pieceForm {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}

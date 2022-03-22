@@ -1,0 +1,632 @@
+.blueBoard_1{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:520px;
+  }
+  
+  .blueBoard_2{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:480px;
+  }
+  
+  .blueBoard_3{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:440px;
+  }
+  
+  .blueBoard_4{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:400px;
+  }
+  
+  .blueBoard_5{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:360px;
+  }
+  
+  .blueBoard_6{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:320px;
+  }
+  
+  .greenBoard_1{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:41px;
+  }
+  
+  .greenBoard_2{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:81px;
+  }
+  
+  .greenBoard_3{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:121px;
+  }
+  
+  .greenBoard_4{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:161px;
+  }
+  
+  .greenBoard_5{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:201px;
+  }
+  
+  .greenBoard_6{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:241px;
+  }
+  
+  .redBoard_1{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:41px;
+    left:280px;
+  }
+  
+  .redBoard_2{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:81px;
+    left:280px;
+  }
+  
+  .redBoard_3{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:121px;
+    left:280px;
+  }
+  
+  .redBoard_4{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:161px;
+    left:280px;
+  }
+  
+  .redBoard_5{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:201px;
+    left:280px;
+  }
+  
+  .redBoard_6{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:241px;
+    left:280px;
+  }
+  
+  .yellowBoard_1{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:519px;
+    left:280px;
+  }
+  
+  .yellowBoard_2{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:479px;
+    left:280px;
+  }
+  
+  .yellowBoard_3{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:439px;
+    left:280px;
+  }
+  
+  .yellowBoard_4{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:399px;
+    left:280px;
+  }
+  
+  .yellowBoard_5{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:359px;
+    left:280px;
+  }
+  
+  .yellowBoard_6{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:319px;
+    left:280px;
+  }
+
+  .Board_1{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:519px;
+  }
+  .Board_2{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:479px;
+  }
+  .Board_3{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:439px;
+  }
+  .Board_4{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:399px;
+  }
+  .Board_5{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:359px;
+  }
+  .Board_6{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:360px;
+    left:320px;
+  }
+  .Board_7{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:400px;
+    left:320px;
+  }
+  .Board_8{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:440px;
+    left:320px;
+  }
+  .Board_9{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:480px;
+    left:320px;
+  }
+  .Board_10{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:520px;
+    left:320px;
+  }
+  .Board_11{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:560px;
+    left:320px;
+  }
+  .Board_12{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:560px;
+    left:280px;
+  }
+  .Board_13{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:560px;
+    left:240px;
+  }
+  .Board_14{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:520px;
+    left:240px;
+  }
+  .Board_15{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:480px;
+    left:240px;
+  }
+  .Board_16{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:440px;
+    left:240px;
+  }
+  .Board_17{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:400px;
+    left:240px;
+  }
+  .Board_18{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:360px;
+    left:240px;
+  }
+  .Board_19{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:201px;
+  }
+  .Board_20{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:161px;
+  }
+  .Board_21{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:121px;
+  }
+  .Board_22{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:81px;
+  }
+  .Board_23{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:41px;
+  }
+  .Board_24{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:1px;
+  }
+  .Board_25{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:1px;
+  }
+  .Board_26{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:1px;
+  }
+  .Board_27{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:41px;
+  }
+  .Board_28{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:81px;
+  }
+  .Board_29{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:121px;
+  }
+  .Board_30{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:161px;
+  }
+  .Board_31{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:201px;
+  }
+  .Board_32{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:201px;
+    left:240px;
+  }
+  .Board_33{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:161px;
+    left:240px;
+  }
+  .Board_34{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:121px;
+    left:240px;
+  }
+  .Board_35{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:81px;
+    left:240px;
+  }
+  .Board_36{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:41px;
+    left:240px;
+  }
+  .Board_37{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:1px;
+    left:240px;
+  }
+  .Board_38{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:1px;
+    left:280px;
+  }
+  .Board_39{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:1px;
+    left:320px;
+  }
+  .Board_40{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:41px;
+    left:320px;
+  }
+  .Board_41{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:81px;
+    left:320px;
+  }
+  .Board_42{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:121px;
+    left:320px;
+  }
+  .Board_43{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:161px;
+    left:320px;
+  }
+  .Board_44{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:201px;
+    left:320px;
+  }
+  .Board_45{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:360px;
+  }
+  .Board_46{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:400px;
+  }
+  .Board_47{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:440px;
+  }
+  .Board_48{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:480px;
+  }
+  .Board_49{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:520px;
+  }
+  .Board_50{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:240px;
+    left:560px;
+  }
+  .Board_51{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:280px;
+    left:560px;
+  }
+  .Board_52{
+    height:39px;
+    width:39px;
+    background-color: transparent;
+    position:absolute;
+    top:320px;
+    left:560px;
+  }

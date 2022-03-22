@@ -1,0 +1,49 @@
+.WinnerMsg{
+    height: 600px;
+    width: 600px;
+    position:absolute;
+    z-index: 100;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay{
+    height:100%;
+    width:100%;
+    background-color: black;
+    opacity: .5;
+}
+
+.winnerMsg{
+    height:250px;
+    width:400px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0px 0px 40px 5px black;
+    position: absolute;
+    padding: 0px 10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.trophyImg{
+   width:100px;
+   height:auto;
+
+}
+
+.red{
+    color: red;
+}
+.yellow{
+    color: yellow;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: blue;
+}

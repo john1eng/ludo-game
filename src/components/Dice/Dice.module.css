@@ -1,0 +1,89 @@
+.dice {
+  padding: 4px;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+  border: 2px solid black;
+}
+
+.dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.first_face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second_face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.second_face .dot:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+/*third die */
+.third_face {
+  display: flex;
+  justify-content: space-between;
+}
+.third_face .dot:nth-of-type(1) {
+  align-self: flex-start;
+}
+.third_face .dot:nth-of-type(2) {
+  align-self: center;
+}
+.third_face .dot:nth-of-type(3) {
+  align-self: flex-end;
+}
+
+/*forth die */
+.fourth_face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fourth_face .column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*five*/
+.fifth_face .column:nth-of-type(2) {
+  justify-content: center;
+  }
+
+  .redDice{
+    position: absolute;
+    top:13px;
+    left: 540px;
+  }
+  
+  .blueDice{
+    position: absolute;
+    top:538px;
+    left: 538px;
+  }
+  .yellowDice{
+    position: absolute;
+    top:530px;
+    left:5px;
+  }
+  .greenDice{
+    position: absolute;
+    top:13px;
+    left:5px;
+  }
+  
+  .diceDisable{
+    visibility: hidden;
+  }
