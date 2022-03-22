@@ -14,7 +14,7 @@
   },
   "plugins": ["react", "jest"],
   "rules": {
-    //   "camelcase": "off",
-    //   "react/prop-types": "off"
+      "camelcase": "off",
+      "react/prop-types": "off"
   }
 }
