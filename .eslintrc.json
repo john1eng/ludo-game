@@ -15,6 +15,9 @@
   "plugins": ["react", "jest"],
   "rules": {
       "camelcase": "off",
-      "react/prop-types": "off"
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "quotes": ["off"],
+      "semi": [2, "always"]
   }
 }

@@ -1,30 +1,27 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { ludoAction } from '../store'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { ludoAction } from "../store";
 
 const MoveButton = (props) => {
-  const { color, pieceNum } = { ...props.properties }
+  const { color, pieceNum } = { ...props.properties };
 
-  const turnColor = useSelector((state) => state.turnColor)
-  const rollState = useSelector((state) => state.rollState)
-  const enable = useSelector((state) => state.enable[color][pieceNum])
-  const reducePieceSize = useSelector((state) => state.reduce[color][pieceNum])
-  const dispatch = useDispatch()
+  const turnColor = useSelector((state) => state.turnColor);
+  const rollStateDisable = useSelector((state) => state.rollStateDisable);
+  const enable = useSelector((state) => state.enable[color][pieceNum]);
+  const reducePieceSize = useSelector((state) => state.reduce[color][pieceNum]);
+  const dispatch = useDispatch();
   function movePlayerHandler () {
-    dispatch(ludoAction.movePlayer(props.properties))
-    dispatch(ludoAction.turnChange())
-    dispatch(ludoAction.diceWhereLocation(''))
+    dispatch(ludoAction.movePlayer(props.properties));
+    dispatch(ludoAction.turnChange());
+    dispatch(ludoAction.diceWhereLocation(""));
   }
 
-  const disableLogic = (color !== turnColor || !rollState || !enable)
+  const cssStyle = [color, "pieceForm"];
+  const disableLogic = color !== turnColor || !rollStateDisable || !enable;
+  disableLogic && cssStyle.push("disabled");
+  reducePieceSize && cssStyle.push("reduce");
 
-  return (
-    <div
-      className={color + ' pieceForm' + (disableLogic ? ' disabled' : '') + (reducePieceSize ? ' reduce' : '')}
-      onClick={movePlayerHandler}
-    >
-    </div>
-  )
-}
+  return <div className={cssStyle.join(" ")} onClick={movePlayerHandler}></div>;
+};
 
-export default MoveButton
+export default MoveButton;
