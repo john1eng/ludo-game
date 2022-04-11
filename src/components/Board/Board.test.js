@@ -8,7 +8,7 @@ import * as reactRedux from "react-redux";
 import { render, screen } from "@testing-library/react";
 import Board from "./Board";
 import { ludoAction } from "../../store";
-import * as MoveButton from "../MoveButton";
+import * as MoveButton from "../MoveButton/MoveButton";
 
 jest.mock("react-redux", () => ({
   useDispatch: jest.fn()

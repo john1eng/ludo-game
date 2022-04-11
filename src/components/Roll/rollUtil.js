@@ -50,6 +50,9 @@ export function blocked(samePosArr, color, dice, position) {
 
     // block from home
     if (typeof currentPos !== "number") {
+      if (currentPos === "6H") {
+        continue;
+      }
       currentPos = currentPos.replace(/H/, "");
       // can't go over home and update choice
       const addDice = +currentPos + dice;
@@ -68,10 +71,7 @@ export function blocked(samePosArr, color, dice, position) {
     for (let ii = 0; ii < samePosArr.length; ii++) {
       if (currentPos === 0) break;
 
-      if (
-        pieceGoToHomeWontBeBlocked(color, addDice, samePosArr[ii])
-      )
-        break;
+      if (pieceGoToHomeWontBeBlocked(color, addDice, samePosArr[ii])) break;
 
       if (addDice > 52 && samePosArr[ii] <= addDice - 52) {
         //   dispatch(
@@ -116,7 +116,7 @@ export function pieceGoToHomeWontBeBlocked(color, addDice, samePosition) {
   return false;
 }
 
-export function checkBlock (dice, turn, position) {
+export function checkBlock(dice, turn, position) {
   // check same position
 
   const samePosArr = samePos(turn, position);

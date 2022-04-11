@@ -2,6 +2,8 @@ import { changeColor } from "./changeColor";
 import { log } from "./log";
 import { rollDice } from "./roll";
 
+// jest.mock("./roll");
+
 test("should render next color in the array", () => {
   const turnColor = "blue";
   const playerArr = ["red", "blue", "yellow", "green"];
@@ -15,6 +17,7 @@ test("should display text", () => {
   const logText = log(text);
   expect(console.log.mock.calls[0][0]).toBe(text);
 });
+
 
 const runTheTest = async () => {
   let randomNum = rollDice();

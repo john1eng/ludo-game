@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ludoAction } from "../store";
+import { ludoAction } from "../../store";
 
 const MoveButton = (props) => {
   const { color, pieceNum } = { ...props.properties };

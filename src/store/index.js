@@ -5,7 +5,7 @@ const rules = {
   blue: { start: 1, end: 51 }, // 1 and 51
   red: { start: 40, end: 38 }, // 40 and 38
   yellow: { start: 14, end: 12 }, // 14 and 12
-  green: { start: 27, end: 25 } // 27 and 25
+  green: { start: 27, end: 25 }, // 27 and 25
 };
 
 const initialState = {
@@ -14,48 +14,48 @@ const initialState = {
       one: 0,
       two: 0,
       three: 0,
-      four: 0
+      four: 0,
     },
     red: {
       one: 0,
       two: 0,
       three: 0,
-      four: 0
+      four: 0,
     },
     yellow: {
       one: 0,
       two: 0,
       three: 0,
-      four: 0
+      four: 0,
     },
     green: {
       one: 0,
       two: 0,
       three: 0,
-      four: 0
-    }
+      four: 0,
+    },
   },
   pieces: {
     blue: {
       start: 4,
       board: 0,
-      home: 0
+      home: 0,
     },
     red: {
       start: 4,
       board: 0,
-      home: 0
+      home: 0,
     },
     yellow: {
       start: 4,
       board: 0,
-      home: 0
+      home: 0,
     },
     green: {
       start: 4,
       board: 0,
-      home: 0
-    }
+      home: 0,
+    },
   },
   homeBoard: {
     blue: new Array(6).fill(0).map((v, i) => {
@@ -69,7 +69,7 @@ const initialState = {
     }),
     green: new Array(6).fill(0).map((v, i) => {
       return [{ pieceNum: "", color: "", component: i + 1 }];
-    })
+    }),
   },
   board: new Array(52).fill(0).map((v, i) => {
     return [{ pieceNum: "", color: "", component: i + 1 }];
@@ -77,7 +77,7 @@ const initialState = {
   dice: 0,
   choices: {
     blue: 0,
-    red: 0
+    red: 0,
   },
   turnColor: "red",
   rollStateDisable: true,
@@ -86,26 +86,26 @@ const initialState = {
       one: true,
       two: true,
       three: true,
-      four: true
+      four: true,
     },
     red: {
       one: true,
       two: true,
       three: true,
-      four: true
+      four: true,
     },
     yellow: {
       one: true,
       two: true,
       three: true,
-      four: true
+      four: true,
     },
     green: {
       one: true,
       two: true,
       three: true,
-      four: true
-    }
+      four: true,
+    },
   },
   rollEnabled: true,
   reduce: {
@@ -113,39 +113,39 @@ const initialState = {
       one: false,
       two: false,
       three: false,
-      four: false
+      four: false,
     },
     red: {
       one: false,
       two: false,
       three: false,
-      four: false
+      four: false,
     },
     yellow: {
       one: false,
       two: false,
       three: false,
-      four: false
+      four: false,
     },
     green: {
       one: false,
       two: false,
       three: false,
-      four: false
-    }
+      four: false,
+    },
   },
   diceWhere: "",
-  players: []
+  players: [],
 };
 
 export const ludoSlice = createSlice({
   name: "ludo",
   initialState: { ...initialState },
   reducers: {
-    resetGame (state) {
+    resetGame(state) {
       return initialState;
     },
-    removePlayer (state, action) {
+    removePlayer(state, action) {
       if (state.players === []) {
         return;
       }
@@ -153,32 +153,32 @@ export const ludoSlice = createSlice({
         (player) => player !== action.payload
       );
     },
-    setPlayers (state, action) {
+    setPlayers(state, action) {
       const p = action.payload;
       state.players = p;
       state.turnColor = p[0];
     },
-    diceWhereLocation (state, action) {
+    diceWhereLocation(state, action) {
       const color = action.payload;
       console.log(color);
       state.diceWhere = color;
     },
-    reducePieceSize (state, action) {
+    reducePieceSize(state, action) {
       const { color, pieceNum } = { ...action.payload };
       state.reduce[color][pieceNum] = true;
     },
-    increasePieceSize (state, action) {
+    increasePieceSize(state, action) {
       const { color, pieceNum } = { ...action.payload };
       state.reduce[color][pieceNum] = false;
     },
-    rollDisable (state) {
+    rollDisable(state) {
       state.rollEnabled = false;
     },
-    turnChange2 (state) {
+    turnChange2(state) {
       const colorChange = changeColor(state.turnColor, state.players);
       state.turnColor = colorChange;
     },
-    turnChange (state) {
+    turnChange(state) {
       if (state.pieces[state.turnColor].home === 4 || state.dice === 6) {
         return;
       }
@@ -199,10 +199,10 @@ export const ludoSlice = createSlice({
 
       // }
     },
-    rollDice (state, action) {
+    rollDice(state, action) {
       state.dice = action.payload;
     },
-    moveToBoard (state, action) {
+    moveToBoard(state, action) {
       const { color, pieceNum } = { ...action.payload };
 
       // there are three senerio
@@ -230,8 +230,8 @@ export const ludoSlice = createSlice({
         state.board[colorStart - 1] = [
           {
             color: color,
-            pieceNum: pieceNum
-          }
+            pieceNum: pieceNum,
+          },
         ];
         state.pieces[color].board = state.pieces[color].board + 1;
         state.pieces[color].start = state.pieces[color].start - 1;
@@ -244,7 +244,7 @@ export const ludoSlice = createSlice({
       if (firstStart.color === color) {
         state.board[colorStart - 1].push({
           color: color,
-          pieceNum: pieceNum
+          pieceNum: pieceNum,
         });
         state.pieces[color].board = state.pieces[color].board + 1;
         state.pieces[color].start = state.pieces[color].start - 1;
@@ -270,8 +270,8 @@ export const ludoSlice = createSlice({
         state.board[colorStart - 1] = [
           {
             color: color,
-            pieceNum: pieceNum
-          }
+            pieceNum: pieceNum,
+          },
         ];
 
         state.pieces[opponentColor].start =
@@ -286,7 +286,7 @@ export const ludoSlice = createSlice({
         state.rollStateDisable = false;
       }
     },
-    movePlayer (state, action) {
+    movePlayer(state, action) {
       const { color, pieceNum } = { ...action.payload };
       state.rollEnabled = true;
       // move piece already in homebase
@@ -348,27 +348,27 @@ export const ludoSlice = createSlice({
       // if (state.dice !== 6 )
       // state.turnColor = state.turnColor === "blue" ? "red" : "blue"
 
-      function movePieceFromHome (num) {
+      function movePieceFromHome(num) {
         console.log(num, color);
         state.homeBoard[color][num - 1][0].pieceNum === ""
           ? (state.homeBoard[color][num - 1] = [
               {
                 color: color,
                 pieceNum: pieceNum,
-                component: num
-              }
+                component: num,
+              },
             ])
           : state.homeBoard[color][num - 1].push({
-            color: color,
-            pieceNum: pieceNum,
-            component: num
-          });
+              color: color,
+              pieceNum: pieceNum,
+              component: num,
+            });
         if (num === 6) {
           state.pieces[color].home = state.pieces[color].home + 1;
         }
       }
 
-      function removePieceFromHome (num) {
+      function removePieceFromHome(num) {
         const homeBoardPieces = state.homeBoard[color][num - 1];
 
         if (homeBoardPieces.length > 1) {
@@ -382,7 +382,7 @@ export const ludoSlice = createSlice({
         }
       }
 
-      function movePieceFromBoard (num) {
+      function movePieceFromBoard(num) {
         // if different color, the other color will replace and increase piece start
         console.log("move piece from board");
         console.log(state.board[num - 1][0].pieceNum);
@@ -396,8 +396,8 @@ export const ludoSlice = createSlice({
           state.board[num - 1] = [
             {
               color: color,
-              pieceNum: pieceNum
-            }
+              pieceNum: pieceNum,
+            },
           ];
           state.pieces[opponentColor].start =
             state.pieces[opponentColor].start + 1;
@@ -412,16 +412,16 @@ export const ludoSlice = createSlice({
           ? (state.board[num - 1] = [
               {
                 color: color,
-                pieceNum: pieceNum
-              }
+                pieceNum: pieceNum,
+              },
             ])
           : state.board[num - 1].push({
-            color: color,
-            pieceNum: pieceNum
-          });
+              color: color,
+              pieceNum: pieceNum,
+            });
       }
 
-      function removePieceFromBoard (num) {
+      function removePieceFromBoard(num) {
         if (state.board[num - 1].length > 1) {
           state.board[num - 1] = state.board[num - 1].filter(
             (obj) => obj.pieceNum !== pieceNum
@@ -431,7 +431,7 @@ export const ludoSlice = createSlice({
         }
       }
     },
-    playerChoices (state, action) {
+    playerChoices(state, action) {
       console.log("playerChoices");
       console.log(action);
       let c = 0;
@@ -462,27 +462,32 @@ export const ludoSlice = createSlice({
 
       state.rollStateDisable = true;
     },
-    enablePiece (state, action) {
+    enablePiece(state, action) {
       const { color, pieceNum } = { ...action.payload };
       state.enable[color][pieceNum] = true;
     },
-    disablePiece (state, action) {
+    disablePiece(state, action) {
       const { color, pieceNum } = { ...action.payload };
       state.enable[color][pieceNum] = false;
     },
-    disablePieces (state, action) {
+    disablePieces(state, action) {
       const disablePieceArray = [...action.payload];
-      disablePieceArray.forEach((piece) => state.enable[piece.color][piece.pieceNum] = false);
+      disablePieceArray.forEach(
+        (piece) => (state.enable[piece.color][piece.pieceNum] = false)
+      );
     },
-    resetDisablePieces (state, action) {
+    resetDisablePieces(state, action) {
       const color = action.payload;
 
       for (const key of Object.keys(state.enable[color])) {
-        state.enable[color][key] = 'true';
+        state.enable[color][key] = "true";
       }
     },
-    fastTest (state, action) {
-      state.board[1] = [{ pieceNum: "one", color: "yellow", component: 2 }, { pieceNum: "two", color: "yellow", component: 2 }];
+    fastTest(state, action) {
+      state.board[1] = [
+        { pieceNum: "one", color: "yellow", component: 2 },
+        { pieceNum: "two", color: "yellow", component: 2 },
+      ];
       state.board[4] = [{ pieceNum: "three", color: "yellow", component: 5 }];
       state.board[0] = [{ pieceNum: "one", color: "blue", component: 1 }];
       state.board[50] = [{ pieceNum: "two", color: "blue", component: 51 }];
@@ -494,7 +499,7 @@ export const ludoSlice = createSlice({
       state.positions.blue.two = 51;
       state.positions.green.one = 25;
       state.rollEnabled = true;
-      state.diceWhere = 'yellow';
+      state.diceWhere = "yellow";
       state.turnColor = "blue";
       state.players = ["yellow", "blue", "green"];
       state.pieces.blue.start = 2;
@@ -503,6 +508,28 @@ export const ludoSlice = createSlice({
       state.pieces.yellow.board = 3;
       state.pieces.green.start = 3;
       state.pieces.green.board = 1;
+    },
+    fastWinTest (state, action) {
+      state.homeBoard['yellow'][5] = [
+        { pieceNum: "one", color: "yellow", component: '6H' },
+        { pieceNum: "two", color: "yellow", component: '6H' },
+        { pieceNum: "three", color: "yellow", component: '6H' }
+      ];
+      state.homeBoard['yellow'][4] = [{ pieceNum: "four", color: "yellow", component: '5H' }];
+      state.board[0] = [{ pieceNum: "one", color: "blue", component: 1 }];
+      state.positions.yellow.one = "6H";
+      state.positions.yellow.two = "6H";
+      state.positions.yellow.three = "6H";
+      state.positions.yellow.four = "5H";
+      state.positions.blue.one = 1;
+      state.rollEnabled = true;
+      state.diceWhere = "yellow";
+      state.turnColor = "blue";
+      state.players = ["yellow", "blue"];
+      state.pieces.blue.start = 1;
+      state.pieces.blue.board = 3;
+      state.pieces.yellow.home = 3;
+      state.pieces.yellow.board = 1;
     }
   }
 });
@@ -511,8 +538,8 @@ const store = configureStore({
   reducer: ludoSlice.reducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false
-    })
+      serializableCheck: false,
+    }),
 });
 
 export const ludoAction = ludoSlice.actions;

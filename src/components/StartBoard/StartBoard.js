@@ -7,15 +7,13 @@ function StartBoard () {
   const [players, setPlayers] = useState([]);
   const [trans, setTrans] = useState({ green: false });
   const dispatch = useDispatch();
+
   const transparent = (color) => {
     setTrans((p) => {
       const t = { ...p };
       t[color] = !t[color];
-      // return {green:true}
-      console.log(players, color);
       let temp = [...players];
       if (t[color]) {
-        // players.push(color)
         temp.push(color);
         setPlayers(temp);
       } else {
@@ -37,21 +35,21 @@ function StartBoard () {
           styles.green + (!trans.green ? '' : ' ' + styles.transparent)
         }
         onClick={() => transparent('green')}
-      ></div>
+      ><span style={{ display: 'none' }}>green</span></div>
       <div
         className={styles.red + (!trans.red ? '' : ' ' + styles.transparent)}
         onClick={() => transparent('red')}
-      ></div>
+      ><span style={{ display: 'none' }}>red</span></div>
       <div
         className={
           styles.yellow + (!trans.yellow ? '' : ' ' + styles.transparent)
         }
         onClick={() => transparent('yellow')}
-      ></div>
+      ><span style={{ display: 'none' }}>yellow</span></div>
       <div
         className={styles.blue + (!trans.blue ? '' : ' ' + styles.transparent)}
         onClick={() => transparent('blue')}
-      ></div>
+      ><span style={{ display: 'none' }}>blue</span></div>
       <div className={styles.start}>
         <div className={styles.heading}>
           <p>Choose&emsp;&emsp;</p> <p>&emsp;&emsp;Players</p>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ludoAction } from '../../store';
-import MoveButton from '../MoveButton';
+import MoveButton from '../MoveButton/MoveButton';
 import { useDispatch } from 'react-redux';
 import styles from './Board.module.css';
 
