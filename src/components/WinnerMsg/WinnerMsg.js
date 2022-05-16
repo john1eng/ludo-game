@@ -10,7 +10,7 @@ const animationTimming = {
   enter: 400,
   exit: 1000,
 };
-function WinnerMsg(props) {
+export function WinnerMsg(props) {
   const color = props.color;
   const dispatch = useDispatch();
 

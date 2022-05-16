@@ -20,8 +20,9 @@ const MoveButton = (props) => {
   const disableLogic = color !== turnColor || !rollStateDisable || !enable;
   disableLogic && cssStyle.push("disabled");
   reducePieceSize && cssStyle.push("reduce");
+  console.log(rollStateDisable)
 
-  return <div className={cssStyle.join(" ")} onClick={movePlayerHandler}></div>;
+  return <div className={cssStyle.join(" ")} style={{ display: 'none' }} onClick={movePlayerHandler}>click</div>;
 };
 
 export default MoveButton;
