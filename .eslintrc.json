@@ -1,23 +1,22 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": ["plugin:react/recommended", "standard", "plugin:jest/recommended"],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": false
+    "env": {
+        "browser": true,
+        "es2021": true
     },
-    "ecmaVersion": 6,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "jest"],
-  "rules": {
-      "camelcase": "off",
-      "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off",
-      "quotes": ["off"],
-      "semi": [2, "always"]
-  }
+    "extends": [
+        "plugin:react/recommended",
+        "standard"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+    }
 }
