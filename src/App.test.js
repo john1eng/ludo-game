@@ -60,6 +60,7 @@ describe("test App component", () => {
   };
   
   const useSelectorMock = reactRedux.useSelector;
+  
   test("render App component", () => {
     useSelectorMock.mockImplementation((selector) => selector(mockStore));
     const { container } = render(<App />)

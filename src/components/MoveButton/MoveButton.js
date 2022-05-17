@@ -22,7 +22,7 @@ const MoveButton = (props) => {
   reducePieceSize && cssStyle.push("reduce");
   console.log(rollStateDisable)
 
-  return <div className={cssStyle.join(" ")} style={{ display: 'none' }} onClick={movePlayerHandler}>click</div>;
+  return <div className={cssStyle.join(" ")} onClick={movePlayerHandler}><noscript>click</noscript></div>;
 };
 
 export default MoveButton;

@@ -47,7 +47,6 @@ describe("test MoveButton", () => {
     const props = { properties: { color: "blue", pieceNum: "one" } };
     const { container } = render(<MoveButton {...props} />);
     expect(mockUseSelector).toHaveBeenCalled();
-    console.debug(screen.debug());
     const clickElement = screen.getByText("click");
     userEvent.click(clickElement);
     expect(mockTurnChange).toHaveBeenCalled();

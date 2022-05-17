@@ -21,7 +21,9 @@ function App() {
   const rollEnabled = useSelector((state) => state.rollEnabled);
   const players = useSelector((state) => state.players);
 
-  const [show, setShow] = useState(false);
+  //StartBoard used to cover the starting section
+  
+  const [show, setShow] = useState(false); //show when theres a winner
   useEffect(() => {
     if (home === 4) setShow(true);
   }, [home]);
@@ -47,7 +49,7 @@ function App() {
         {!players.length ? <StartBoard /> : ""}
         {show && <Overlay />}
       </div>
-      <FastTest />
+      {/* <FastTest /> */}
     </div>
   );
 }

@@ -490,13 +490,13 @@ export const ludoSlice = createSlice({
       ];
       state.board[4] = [{ pieceNum: "three", color: "yellow", component: 5 }];
       state.board[0] = [{ pieceNum: "one", color: "blue", component: 1 }];
-      state.board[50] = [{ pieceNum: "two", color: "blue", component: 51 }];
+      state.board[49] = [{ pieceNum: "two", color: "blue", component: 50 }];
       state.board[24] = [{ pieceNum: "one", color: "green", component: 25 }];
       state.positions.yellow.one = 2;
       state.positions.yellow.two = 2;
       state.positions.yellow.three = 5;
       state.positions.blue.one = 1;
-      state.positions.blue.two = 51;
+      state.positions.blue.two = 50;
       state.positions.green.one = 25;
       state.rollEnabled = true;
       state.diceWhere = "yellow";
