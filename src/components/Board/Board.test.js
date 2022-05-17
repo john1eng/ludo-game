@@ -4,18 +4,18 @@
 // called increasePieceSize function
 // do the same with a homeboard
 
-import * as reactRedux from "react-redux";
-import { render, screen } from "@testing-library/react";
-import Board from "./Board";
-import { ludoAction } from "../../store";
-// import * as MoveButton from "../MoveButton/MoveButton";
+import * as reactRedux from 'react-redux'
+import { render, screen } from '@testing-library/react'
+import Board from './Board'
+import { ludoAction } from '../../store'
+import * as MoveButton from '../MoveButton/MoveButton'
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn()
 }))
 
 describe('Render Broad', () => {
-  let reducePieceSizeMock, increasePieceSizeMock
+  let reducePieceSizeMock, increasePieceSizeMock, mockMoveButton
   beforeEach(() => {
     useDispatchMock.mockImplementation(() => jest.fn())
     reducePieceSizeMock = jest
@@ -24,6 +24,9 @@ describe('Render Broad', () => {
     increasePieceSizeMock = jest
       .spyOn(ludoAction, 'increasePieceSize')
       .mockImplementation(() => jest.fn())
+    mockMoveButton = jest
+      .spyOn(MoveButton, 'default')
+      .mockImplementation(() => <div>piece</div>)
   })
   const useDispatchMock = reactRedux.useDispatch
 
@@ -55,52 +58,53 @@ describe('Render Broad', () => {
     expect(container.getElementsByClassName('Board_70').length).toBe(0)
   })
 
-  // test('render 3 blue pieces on the board', () => {
-  //   const updateBoard = [...board]
-  //   updateBoard[0] = [{ pieceNum: 'one', color: 'blue', component: 1 }]
-  //   updateBoard[1] = [{ pieceNum: 'one', color: 'blue', component: 2 }]
-  //   updateBoard[2] = [{ pieceNum: 'one', color: 'blue', component: 3 }]
-  //   const prop = { color: '', board: [...updateBoard] }
-  //   render(<Board {...prop} />)
-  //   expect(increasePieceSizeMock).toHaveBeenCalledTimes(3)
-  //   expect(screen.getAllByText('piece').length).toBe(3)
-  // })
+  test('render 3 blue pieces on the board', () => {
+    const updateBoard = [...board]
+    updateBoard[0] = [{ pieceNum: 'one', color: 'blue', component: 1 }]
+    updateBoard[1] = [{ pieceNum: 'one', color: 'blue', component: 2 }]
+    updateBoard[2] = [{ pieceNum: 'one', color: 'blue', component: 3 }]
+    const prop = { color: '', board: [...updateBoard] }
+    render(<Board {...prop} />)
+    expect(increasePieceSizeMock).toHaveBeenCalledTimes(3)
+    expect(screen.getAllByText('piece').length).toBe(3)
+  })
 
-  // test('render 2 pieces in the same board space, which called reduceSize', () => {
-  //   const updateBoard = [...board]
-  //   updateBoard[0] = [
-  //     { pieceNum: 'one', color: 'blue', component: 1 },
-  //     { pieceNum: 'two', color: 'blue', component: 1 }
-  //   ]
-  //   const prop = { color: '', board: [...updateBoard] }
-  //   render(<Board {...prop} />)
-  //   expect(reducePieceSizeMock).toHaveBeenCalledTimes(2)
-  //   expect(screen.getAllByText('piece').length).toBe(2)
-  // })
+  test('render 2 pieces in the same board space, which called reduceSize', () => {
+    const updateBoard = [...board]
+    updateBoard[0] = [
+      { pieceNum: 'one', color: 'blue', component: 1 },
+      { pieceNum: 'two', color: 'blue', component: 1 }
+    ]
+    const prop = { color: '', board: [...updateBoard] }
+    render(<Board {...prop} />)
+    expect(reducePieceSizeMock).toHaveBeenCalledTimes(2)
+    expect(screen.getAllByText('piece').length).toBe(2)
+  })
 
-  // test('render 3 blue pieces in the same board space, which called reduceSize and 2 red pieces, which called increasePieceSize', () => {
-  //   const updateBoard = [...board]
-  //   updateBoard[0] = [
-  //     { pieceNum: 'one', color: 'blue', component: 1 },
-  //     { pieceNum: 'two', color: 'blue', component: 1 }
-  //   ]
-  //   updateBoard[1] = [{ pieceNum: 'one', color: 'red', component: 2 }]
-  //   updateBoard[2] = [{ pieceNum: 'two', color: 'red', component: 3 }]
-  //   const prop = { color: '', board: [...updateBoard] }
-  //   render(<Board {...prop} />)
-  //   expect(reducePieceSizeMock).toHaveBeenCalledTimes(2)
-  //   expect(increasePieceSizeMock).toHaveBeenCalledTimes(2)
-  //   expect(screen.getAllByText('piece').length).toBe(4)
-  // })
+  test('render 3 blue pieces in the same board space, which called reduceSize and 2 red pieces, which called increasePieceSize', () => {
+    const updateBoard = [...board]
+    updateBoard[0] = [
+      { pieceNum: 'one', color: 'blue', component: 1 },
+      { pieceNum: 'two', color: 'blue', component: 1 }
+    ]
+    updateBoard[1] = [{ pieceNum: 'one', color: 'red', component: 2 }]
+    updateBoard[2] = [{ pieceNum: 'two', color: 'red', component: 3 }]
+    const prop = { color: '', board: [...updateBoard] }
+    render(<Board {...prop} />)
+    expect(reducePieceSizeMock).toHaveBeenCalledTimes(2)
+    expect(increasePieceSizeMock).toHaveBeenCalledTimes(2)
+    expect(screen.getAllByText('piece').length).toBe(4)
+  })
 
-  // test('render 3 blue pieces in homeboard', () => {
-  //   const updateHomeBoard = { ...homeBoard }
-  //   updateHomeBoard.blue[0] = [{ pieceNum: 'one', color: 'blue', component: 1 }]
-  //   updateHomeBoard.blue[1] = [{ pieceNum: 'two', color: 'blue', component: 2 }]
-  //   updateHomeBoard.blue[5] = [{ pieceNum: 'three', color: 'blue', component: 6 }]
-  //   const prop = { color: 'blue', board: [...updateHomeBoard.blue] }
-  //   render(<Board {...prop} />)
-  //   expect(increasePieceSizeMock).toHaveBeenCalledTimes(3)
-  //   expect(screen.getAllByText('piece').length).toBe(3)
-  // })
+  test('render 3 blue pieces in homeboard', () => {
+    const updateHomeBoard = { ...homeBoard }
+    updateHomeBoard.blue[0] = [{ pieceNum: 'one', color: 'blue', component: 1 }]
+    updateHomeBoard.blue[1] = [{ pieceNum: 'two', color: 'blue', component: 2 }]
+    updateHomeBoard.blue[5] = [{ pieceNum: 'three', color: 'blue', component: 6 }]
+    const prop = { color: 'blue', board: [...updateHomeBoard.blue] }
+    render(<Board {...prop} />)
+    expect(mockMoveButton).toHaveBeenCalledTimes(3)
+    expect(increasePieceSizeMock).toHaveBeenCalledTimes(3)
+    expect(screen.getAllByText('piece').length).toBe(3)
+  })
 })

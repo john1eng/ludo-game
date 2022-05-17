@@ -1,6 +1,6 @@
-import { changeColor } from "./changeColor";
-import { log } from "./log";
-import { rollDice } from "./roll";
+import { changeColor } from './changeColor'
+import { log } from './log'
+import { rollDice } from './roll'
 
 // jest.mock("./roll");
 
@@ -11,13 +11,12 @@ test('should render next color in the array', () => {
   expect(nextColor).toBe('yellow')
 })
 
-test("should display text", () => {
-  jest.spyOn(console, "log");
-  const text = "haha";
-  const logText = log(text);
-  expect(console.log.mock.calls[0][0]).toBe(text);
-});
-
+test('should display text', () => {
+  jest.spyOn(console, 'log')
+  const text = 'haha'
+  log(text)
+  expect(console.log.mock.calls[0][0]).toBe(text)
+})
 
 const runTheTest = async () => {
   let randomNum = rollDice()
