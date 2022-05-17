@@ -1,31 +1,31 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { ludoAction } from '../../store';
-import styles from './StartBoard.module.css';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { ludoAction } from '../../store'
+import styles from './StartBoard.module.css'
 
 function StartBoard () {
-  const [players, setPlayers] = useState([]);
-  const [trans, setTrans] = useState({ green: false });
-  const dispatch = useDispatch();
+  const [players, setPlayers] = useState([])
+  const [trans, setTrans] = useState({ green: false })
+  const dispatch = useDispatch()
 
   const transparent = (color) => {
     setTrans((p) => {
-      const t = { ...p };
-      t[color] = !t[color];
-      let temp = [...players];
+      const t = { ...p }
+      t[color] = !t[color]
+      let temp = [...players]
       if (t[color]) {
-        temp.push(color);
-        setPlayers(temp);
+        temp.push(color)
+        setPlayers(temp)
       } else {
-        temp = temp.filter((i) => i !== color);
-        setPlayers(temp);
+        temp = temp.filter((i) => i !== color)
+        setPlayers(temp)
       }
-      return t;
-    });
-  };
+      return t
+    })
+  }
 
   function startGame () {
-    dispatch(ludoAction.setPlayers(players));
+    dispatch(ludoAction.setPlayers(players))
   }
 
   return (
@@ -64,7 +64,7 @@ function StartBoard () {
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default StartBoard;
+export default StartBoard

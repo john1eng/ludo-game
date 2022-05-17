@@ -1,9 +1,9 @@
-import { ludoAction } from "./index";
+import { ludoAction } from './index'
 
 export function moveToBoard (color, pieceNum) {
-  console.log("moveToBoard");
+  console.log('moveToBoard')
   return (dispatch) => {
-    dispatch(ludoAction.moveToBoard({ color: color, pieceNum: pieceNum }));
-    dispatch(ludoAction.diceWhereLocation(""));
-  };
+    dispatch(ludoAction.moveToBoard({ color, pieceNum }))
+    dispatch(ludoAction.diceWhereLocation(''))
+  }
 }

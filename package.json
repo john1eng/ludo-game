@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --verbose false",
     "eject": "react-scripts eject",
-    "lint": "eslint **/*.js"
+    "lint": "eslint ../**/*.js"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +46,7 @@
     "eslint": "^8.15.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.2",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",

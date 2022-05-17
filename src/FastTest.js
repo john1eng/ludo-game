@@ -1,24 +1,24 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { ludoAction } from "./store";
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { ludoAction } from './store'
 
-function FastTest() {
-  const dispatch = useDispatch();
+function FastTest () {
+  const dispatch = useDispatch()
 
   const fastTestHandler = () => {
-    dispatch(ludoAction.fastTest());
-  };
+    dispatch(ludoAction.fastTest())
+  }
 
   const fastWinHandler = () => {
-    dispatch(ludoAction.fastWinTest());
-  };
+    dispatch(ludoAction.fastWinTest())
+  }
 
   return (
     <>
       <button onClick={fastTestHandler}>FastTest</button>
       <button onClick={fastWinHandler}>FastWin</button>
     </>
-  );
+  )
 }
 
-export default FastTest;
+export default FastTest
